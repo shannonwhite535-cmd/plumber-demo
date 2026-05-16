@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hot Water Sizing Tool | Hunter Tap &amp; Gas Co.</title>
+<meta name="description" content="Free hot water sizing calculator. Get a recommended system size and ballpark running cost based on household size and energy type.">
+<link rel="canonical" href="https://plumber-demo.steelcapdigital.com.au/tools/hot-water-sizing.html">
+<meta name="theme-color" content="#15263d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hot Water Sizing Tool | Hunter Tap &amp; Gas Co.">
+<meta property="og:description" content="Free hot water sizing calculator. Get a recommended system size and ballpark running cost based on household size and energy type.">
+<meta property="og:url" content="https://plumber-demo.steelcapdigital.com.au/tools/hot-water-sizing.html">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/big-shoulders-display-latin-800.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-regular.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "@id": "https://plumber-demo.steelcapdigital.com.au/#org",
+  "name": "Hunter Tap & Gas Co.",
+  "url": "https://plumber-demo.steelcapdigital.com.au/",
+  "telephone": "+61455092178",
+  "email": "dean@huntertapandgas.com.au",
+  "areaServed": [
+    {"@type":"City","name":"Newcastle"},
+    {"@type":"City","name":"Maitland"},
+    {"@type":"AdministrativeArea","name":"Hunter Valley"},
+    {"@type":"AdministrativeArea","name":"Port Stephens"}
+  ],
+  "address": {
+    "@type":"PostalAddress",
+    "addressRegion":"NSW",
+    "addressCountry":"AU"
+  },
+  "priceRange":"$$"
+}
+</script>
+
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="demo-banner" role="region" aria-label="Demo notice">
+<strong>Designed by Steel Cap Digital</strong> &ndash; This is a demo. Your site could look like this. <span class="demo-banner-long">From $1,800. </span><a href="https://steelcapdigital.com.au/websites">See pricing &rarr;</a>
+</div>
+<nav class="main-nav" aria-label="Primary">
+<div class="nav-inner">
+<a class="nav-brand" href="/">
+<span class="nav-brand-mark" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="M12 2C9 6 6 9 6 13a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>
+</span>
+<span class="nav-brand-text">Hunter Tap <span class="amp">&amp;</span> Gas<small>Plumbing &middot; Gas &middot; Hunter region</small></span>
+</a>
+<div class="nav-links" role="navigation">
+<a href="/">Home</a>
+<div class="nav-dropdown">
+<a href="/services.html">Services</a>
+<button class="nav-dd-btn" aria-label="Services submenu" aria-expanded="false">&#9660;</button>
+<div class="nav-dd-menu">
+<a href="/services/general-plumbing.html">General Plumbing</a>
+<a href="/services/hot-water-systems.html">Hot Water Systems</a>
+<a href="/services/blocked-drains.html">Blocked Drains</a>
+<a href="/services/gas-fitting.html">Gas Fitting</a>
+</div>
+</div>
+<a href="/pricing.html">Pricing</a>
+<a href="/recent-jobs.html">Recent Jobs</a>
+<a href="/blog.html">Tips &amp; Guides</a>
+<a href="/about.html">About</a>
+<a href="/contact.html" class="nav-cta">Get a quote</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile menu">
+<a href="/">Home</a>
+<a href="/services.html">Services</a>
+<a href="/services/general-plumbing.html" class="mob-sub">General Plumbing</a>
+<a href="/services/hot-water-systems.html" class="mob-sub">Hot Water Systems</a>
+<a href="/services/blocked-drains.html" class="mob-sub">Blocked Drains</a>
+<a href="/services/gas-fitting.html" class="mob-sub">Gas Fitting</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/recent-jobs.html">Recent Jobs</a>
+<a href="/blog.html">Tips &amp; Guides</a>
+<a href="/about.html">About</a>
+<a href="/tools/hot-water-sizing.html">Hot water sizing tool</a>
+<a href="/tools/find-your-stop-tap.html">Find your stop tap</a>
+<a href="/contact.html" class="mob-cta">Get a quote</a>
+</div>
+<div class="sticky-call">
+<div class="sticky-call-text"><strong>Need a plumber now?</strong><span>Demo: Dean would answer this directly</span></div>
+<a class="btn-primary" href="tel:+61455092178">Call 0455 092 178</a>
+</div>
+
+<main id="main">
+
+<div class="page-hero">
+<div class="page-hero-inner">
+<div class="eyebrow">Tools / Hot water sizing</div>
+<h1>What size hot water system do you need?</h1>
+<p class="lede">Three quick questions. Get a recommended tank size, system type, and ballpark running cost. Real numbers, not a sales pitch.</p>
+</div>
+</div>
+
+<section class="section">
+<div class="section-inner" style="max-width:780px">
+<form class="tool-card" id="hws-tool" onsubmit="return false">
+
+<div class="tool-section">
+<h3>1. How many people in the house?</h3>
+<div class="radio-group">
+<div class="radio-tile"><input type="radio" name="people" id="p1" value="1" checked><label for="p1">1<small>just me</small></label></div>
+<div class="radio-tile"><input type="radio" name="people" id="p2" value="2"><label for="p2">2<small>couple</small></label></div>
+<div class="radio-tile"><input type="radio" name="people" id="p3" value="3"><label for="p3">3</label></div>
+<div class="radio-tile"><input type="radio" name="people" id="p4" value="4"><label for="p4">4</label></div>
+<div class="radio-tile"><input type="radio" name="people" id="p5" value="5"><label for="p5">5</label></div>
+<div class="radio-tile"><input type="radio" name="people" id="p6" value="6"><label for="p6">6+<small>big family</small></label></div>
+</div>
+</div>
+
+<div class="tool-section">
+<h3>2. Heavy hot water user?</h3>
+<p style="font-size:14px;color:var(--muted);margin-bottom:8px">Long showers, large baths, dishwasher and washing machine both daily? Pick yes. Quick showers and one load per day? Pick no.</p>
+<div class="radio-group">
+<div class="radio-tile"><input type="radio" name="usage" id="u1" value="low"><label for="u1">Low usage<small>quick showers</small></label></div>
+<div class="radio-tile"><input type="radio" name="usage" id="u2" value="med" checked><label for="u2">Normal<small>typical family</small></label></div>
+<div class="radio-tile"><input type="radio" name="usage" id="u3" value="high"><label for="u3">Heavy<small>long showers, baths</small></label></div>
+</div>
+</div>
+
+<div class="tool-section">
+<h3>3. What energy do you have available?</h3>
+<div class="radio-group">
+<div class="radio-tile"><input type="radio" name="energy" id="e1" value="elec-cont"><label for="e1">Electric only<small>continuous tariff</small></label></div>
+<div class="radio-tile"><input type="radio" name="energy" id="e2" value="elec-offpeak"><label for="e2">Electric<small>off-peak available</small></label></div>
+<div class="radio-tile"><input type="radio" name="energy" id="e3" value="gas" checked><label for="e3">Gas connected<small>can use gas</small></label></div>
+<div class="radio-tile"><input type="radio" name="energy" id="e4" value="solar"><label for="e4">Solar PV<small>excess power</small></label></div>
+</div>
+</div>
+
+<button type="button" class="form-submit" id="hws-calc">Show me my options</button>
+
+<div id="hws-result" class="tool-result" style="display:none">
+<h3>Recommended for you</h3>
+<div id="hws-result-body"></div>
+<p class="tool-result-note"><strong>Important:</strong> These are estimates based on common Hunter region installs and typical NSW energy prices. Real recommendation comes after I have looked at your existing setup, gas line capacity, and roof orientation. <a href="/contact.html" style="color:var(--copper);text-decoration:underline">Get a proper quote &rarr;</a></p>
+</div>
+
+</form>
+</div>
+</section>
+
+<script>
+(function(){
+  var btn = document.getElementById('hws-calc');
+  var result = document.getElementById('hws-result');
+  var body = document.getElementById('hws-result-body');
+
+  function get(name){
+    var el = document.querySelector('input[name="'+name+'"]:checked');
+    return el ? el.value : null;
+  }
+
+  function calc(){
+    var people = parseInt(get('people') || '1', 10);
+    var usage = get('usage') || 'med';
+    var energy = get('energy') || 'gas';
+
+    // Base size in litres
+    var perPerson = 50;
+    if (usage === 'low') perPerson = 40;
+    if (usage === 'high') perPerson = 65;
+    var minSize = people * perPerson;
+
+    // Round up to standard tank sizes
+    var sizes = [125, 160, 200, 250, 315, 400];
+    var tankSize = sizes.find(function(s){ return s >= minSize; }) || 400;
+
+    // Recommendation by energy type
+    var recs = [];
+
+    if (energy === 'solar' || (energy === 'gas' && people >= 3)){
+      recs.push({
+        name: 'Heat pump',
+        size: tankSize + 'L tank',
+        upfront: '$3,800 to $4,800 installed',
+        running: '~$' + (people * 75) + '/year',
+        why: 'Cheapest to run by far. Pairs perfectly with solar. Quiet enough for the side of a house.',
+        rebate: 'NSW rebates may apply, $1,000 to $1,500 off upfront.',
+        primary: true
+      });
+    }
+
+    if (energy === 'gas'){
+      var gasTank = tankSize;
+      recs.push({
+        name: 'Gas storage',
+        size: gasTank + 'L tank',
+        upfront: '$2,200 to $3,400 installed',
+        running: '~$' + (people * 220) + '/year',
+        why: 'Fast recovery, never run out unless you all shower in a row. Best balance of upfront cost and convenience.',
+        primary: !recs.length
+      });
+      if (people >= 3){
+        recs.push({
+          name: 'Gas continuous-flow',
+          size: '26L/min unit (no tank)',
+          upfront: '$2,800 to $3,800 installed',
+          running: '~$' + (people * 180) + '/year',
+          why: 'Heats water on demand, you cannot run out. Best for big families and back-to-back showers.'
+        });
+      }
+    }
+
+    if (energy === 'elec-offpeak'){
+      var bigger = Math.max(tankSize, 250);
+      recs.push({
+        name: 'Off-peak electric storage',
+        size: bigger + 'L tank',
+        upfront: '$1,650 to $2,400 installed',
+        running: '~$' + (people * 280) + '/year (off-peak rate)',
+        why: 'Cheapest upfront. Bigger tank needed because it only heats overnight. Good if you cannot install solar or gas.',
+        primary: true
+      });
+    }
+
+    if (energy === 'elec-cont'){
+      recs.push({
+        name: 'Continuous-tariff electric',
+        size: tankSize + 'L tank',
+        upfront: '$1,650 to $2,400 installed',
+        running: '~$' + (people * 450) + '/year',
+        why: 'Cheapest upfront but dearest to run by far. Only worth it if you genuinely cannot install anything else.',
+        primary: true
+      });
+      recs.push({
+        name: 'Better: switch to heat pump',
+        size: tankSize + 'L tank',
+        upfront: '$3,800 to $4,800 installed',
+        running: '~$' + (people * 100) + '/year',
+        why: 'You will pay back the install difference in 3 to 5 years on the running savings.'
+      });
+    }
+
+    // Build HTML
+    var html = '<p style="margin-bottom:18px;color:var(--text-soft);font-size:15px;line-height:1.6">For ' + people + ' ' + (people === 1 ? 'person' : 'people') + ' with ' + usage + ' usage, you need around <strong style="color:var(--navy)">' + minSize + ' litres of effective capacity per day</strong>.</p>';
+
+    recs.forEach(function(r, i){
+      var border = r.primary ? '2px solid var(--copper)' : '1px solid var(--border)';
+      var tag = r.primary ? '<span style="background:var(--copper);color:#fff;padding:3px 10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;border-radius:3px;margin-left:10px">Best fit</span>' : '';
+      html += '<div style="background:#fff;border:' + border + ';padding:22px;margin-bottom:14px;border-radius:6px">';
+      html += '<h4 style="font-family:var(--font-head);font-size:20px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;letter-spacing:.02em">' + r.name + tag + '</h4>';
+      html += '<div class="tool-result-row"><strong>Size</strong><span>' + r.size + '</span></div>';
+      html += '<div class="tool-result-row"><strong>Upfront cost</strong><span>' + r.upfront + '</span></div>';
+      html += '<div class="tool-result-row"><strong>Running cost</strong><span>' + r.running + '</span></div>';
+      html += '<p style="margin-top:12px;font-size:14px;color:var(--text-soft);line-height:1.6">' + r.why + '</p>';
+      if (r.rebate){ html += '<p style="margin-top:8px;font-size:13px;color:var(--copper);font-weight:600">' + r.rebate + '</p>'; }
+      html += '</div>';
+    });
+
+    body.innerHTML = html;
+    result.style.display = 'block';
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  btn.addEventListener('click', calc);
+})();
+</script>
+
+</main>
+<section class="cta-strip" aria-label="Final call to action">
+<div class="cta-strip-inner">
+<h2>Burst pipe, blocked drain, or just a leaky tap that&rsquo;s driving you mad?</h2>
+<p>Call Dean directly. No call centre, no booking agent, no waiting on a quote that never comes.</p>
+<div class="cta-actions">
+<a class="btn-primary" href="tel:+61455092178">Call 0455 092 178</a>
+<a class="btn-outline on-dark" href="/contact.html">Send a message instead</a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<a class="footer-brand" href="/">
+<span class="nav-brand-mark" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 6 9 6 13a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>
+</span>
+<span class="nav-brand-text">Hunter Tap <span class="amp">&amp;</span> Gas<small>Plumbing &middot; Gas &middot; Hunter region</small></span>
+</a>
+<p class="footer-tag">Licensed plumbing and gas fitting across Newcastle, Maitland, the Hunter Valley and Port Stephens. Straight prices. Same-day where we can.</p>
+<div class="footer-contact">
+<div><a href="tel:+61455092178">0455 092 178</a></div>
+<div><a href="mailto:dean@huntertapandgas.com.au">dean@huntertapandgas.com.au</a></div>
+<div>Plumbing licence L.247831C</div>
+<div>Gas licence GF.18024</div>
+<div>ABN 98 765 432 100</div>
+</div>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/services/general-plumbing.html">General plumbing</a></li>
+<li><a href="/services/hot-water-systems.html">Hot water systems</a></li>
+<li><a href="/services/blocked-drains.html">Blocked drains</a></li>
+<li><a href="/services/gas-fitting.html">Gas fitting</a></li>
+<li><a href="/pricing.html">Honest pricing</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Areas served</h4>
+<ul>
+<li><a href="/areas/newcastle.html">Newcastle</a></li>
+<li><a href="/areas/maitland.html">Maitland</a></li>
+<li><a href="/areas/cessnock.html">Cessnock</a></li>
+<li><a href="/areas/raymond-terrace.html">Raymond Terrace</a></li>
+<li><a href="/areas/nelson-bay.html">Nelson Bay</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Helpful tools</h4>
+<ul>
+<li><a href="/tools/hot-water-sizing.html">Hot water sizing tool</a></li>
+<li><a href="/tools/find-your-stop-tap.html">Find your stop tap</a></li>
+<li><a href="/recent-jobs.html">Recent jobs log</a></li>
+<li><a href="/blog.html">Tips &amp; guides</a></li>
+<li><a href="/about.html">About Dean</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>
+<span>&copy; <span data-year>2026</span> Hunter Tap &amp; Gas Co. ABN 98 765 432 100.</span>
+</div>
+<div>
+<a href="/privacy.html">Privacy</a>
+<a href="/accessibility.html">Accessibility</a>
+<a href="/sitemap.html">Sitemap</a>
+</div>
+<div class="footer-credit">Demo designed by <a href="https://steelcapdigital.com.au">Steel Cap Digital</a></div>
+</div>
+</div>
+</footer>
+<script src="/assets/nav.js" defer></script>
+<script src="/assets/a11y.js" defer></script>
+</body>
+</html>
