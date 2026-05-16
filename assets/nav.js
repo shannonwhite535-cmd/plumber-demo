@@ -1,4 +1,4 @@
-/* Hunter Tap & Gas - nav.js
+/* Crack Plumbing & Gas - nav.js
    Handles mobile menu, dropdown, scroll shadow, FAQ accordion, current page highlighting */
 (function(){
   'use strict';
@@ -105,7 +105,7 @@
       var alertBox = document.createElement('div');
       alertBox.setAttribute('role', 'status');
       alertBox.style.cssText = 'background:#15263d;color:#fff;padding:20px 24px;border-radius:6px;margin-top:16px;border-left:4px solid #b85c3c;font-size:15px;line-height:1.6';
-      alertBox.innerHTML = '<strong style="color:#fff;display:block;margin-bottom:6px">Demo site</strong>This form is visual only. On a real Hunter Tap & Gas site, this would email Dean directly and redirect to a thank-you page.';
+      alertBox.innerHTML = '<strong style="color:#fff;display:block;margin-bottom:6px">Demo site</strong>This form is visual only. On a real Crack Plumbing & Gas site, this would email Barry directly and redirect to a thank-you page.';
       var existing = form.querySelector('[role="status"]');
       if (existing) existing.remove();
       form.appendChild(alertBox);

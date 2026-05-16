@@ -1,4 +1,4 @@
-/* Hunter Tap & Gas - a11y.js
+/* Crack Plumbing & Gas - a11y.js
    Three user controls, all persisted in localStorage:
    - Plain English mode (jargon swap)
    - Text size (3 levels)
@@ -28,8 +28,9 @@
   function apply(prefs){
     body.classList.toggle('pe-mode', !!prefs.pe);
     body.classList.toggle('hc-mode', !!prefs.hc);
-    var scale = prefs.size === 3 ? 1.3 : prefs.size === 2 ? 1.15 : 1;
-    document.documentElement.style.setProperty('--user-font-scale', scale);
+    body.classList.remove('text-large', 'text-xl');
+    if (prefs.size === 2) body.classList.add('text-large');
+    if (prefs.size === 3) body.classList.add('text-xl');
     // Update pressed state on buttons
     var peBtn = document.getElementById('a11y-pe');
     if (peBtn) peBtn.setAttribute('aria-pressed', prefs.pe ? 'true' : 'false');

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Hunter Tap & Gas Co. - Plumber demo site
+   Crack Plumbing & Gas - Plumber demo site
    Designed by Steel Cap Digital
    Navy + Copper light mode. Accessibility-first.
    ========================================================================== */
@@ -52,7 +52,7 @@ body.hc-mode{
   --cream-deep: #ffffff;
   --white: #ffffff;
   --card: #ffffff;
-  --card-alt: #ffff00;
+  --card-alt: #ffffff;
   --navy: #000000;
   --navy-dark: #000000;
   --navy-soft: #000000;
@@ -60,7 +60,7 @@ body.hc-mode{
   --copper-hover: #000000;
   --copper-deep: #000000;
   --copper-soft: #000000;
-  --copper-tint: #ffff00;
+  --copper-tint: #ffffff;
   --text: #000000;
   --text-soft: #000000;
   --muted: #000000;
@@ -69,9 +69,47 @@ body.hc-mode{
   --border-strong: #000000;
   --border-navy: #000000;
 }
-body.hc-mode a{text-decoration:underline}
-body.hc-mode .btn-primary,body.hc-mode .btn-navy{background:#000;color:#fff;border:2px solid #fff;outline:2px solid #000}
+body.hc-mode{background:#fff !important;color:#000 !important}
+body.hc-mode a{text-decoration:underline;color:#000}
+body.hc-mode a:visited{color:#000}
+body.hc-mode .btn-primary,body.hc-mode .btn-navy{background:#000;color:#fff;border:2px solid #000;box-shadow:none}
+body.hc-mode .btn-primary:hover,body.hc-mode .btn-navy:hover{background:#fff;color:#000;border-color:#000;transform:none}
+body.hc-mode .btn-outline{background:#fff;color:#000;border:2px solid #000}
+body.hc-mode .btn-outline:hover{background:#000;color:#fff}
+body.hc-mode .btn-outline.on-dark{background:#000;color:#fff;border-color:#fff}
 body.hc-mode .copper-bar::before,body.hc-mode .section-label::before,body.hc-mode .eyebrow::before{background:#000}
+body.hc-mode .card,body.hc-mode .form-card,body.hc-mode .cm-tile,body.hc-mode .area-tile,body.hc-mode .blog-card,body.hc-mode .job-row,body.hc-mode .pricing-row,body.hc-mode .hours-table,body.hc-mode .faq-item,body.hc-mode .suburb-fact,body.hc-mode .proc-step,body.hc-mode .tool-card,body.hc-mode .callout{background:#fff !important;border:2px solid #000 !important;color:#000 !important;box-shadow:none}
+body.hc-mode .card-icon,body.hc-mode .cm-icon{background:#fff !important;color:#000 !important;border:2px solid #000}
+body.hc-mode .nav-links a:hover,body.hc-mode .nav-links a[aria-current="page"],body.hc-mode .mobile-menu a:hover,body.hc-mode .nav-dd-menu a:hover{background:#000 !important;color:#fff !important}
+body.hc-mode .nav-links a.nav-cta,body.hc-mode .mobile-menu .mob-cta{background:#000;color:#fff;border:2px solid #000}
+body.hc-mode .form-group input,body.hc-mode .form-group select,body.hc-mode .form-group textarea{background:#fff !important;color:#000 !important;border:2px solid #000 !important}
+body.hc-mode .form-group input:focus,body.hc-mode .form-group select:focus,body.hc-mode .form-group textarea:focus{outline:3px solid #000;box-shadow:none}
+body.hc-mode .form-submit{background:#000;color:#fff;border:2px solid #000}
+body.hc-mode .radio-tile label{background:#fff;color:#000;border:2px solid #000}
+body.hc-mode .radio-tile input:checked+label{background:#000;color:#fff;border-color:#000}
+body.hc-mode .section,body.hc-mode .section.alt,body.hc-mode .section.deep,body.hc-mode .section.navy,body.hc-mode .page-hero,body.hc-mode .pricing-strip,body.hc-mode .cta-strip,body.hc-mode .trust-strip{background:#fff !important;color:#000 !important}
+body.hc-mode .section.navy h1,body.hc-mode .section.navy h2,body.hc-mode .section.navy h3,body.hc-mode .section.navy p,body.hc-mode .pricing-strip h2,body.hc-mode .pricing-strip-sub,body.hc-mode .pricing-strip-footnote,body.hc-mode .pricing-row-name,body.hc-mode .pricing-row-cost,body.hc-mode .cta-strip h2,body.hc-mode .cta-strip p,body.hc-mode .home-hero h1,body.hc-mode .home-hero p,body.hc-mode .home-hero-trust,body.hc-mode .home-hero-trust span{color:#000 !important}
+body.hc-mode .home-hero,body.hc-mode .pricing-strip,body.hc-mode .cta-strip{border-color:#000}
+body.hc-mode .home-hero::before,body.hc-mode .cta-strip::before{display:none}
+body.hc-mode .pricing-rows{background:#fff;border-color:#000}
+body.hc-mode .pricing-row{background:#fff !important;border-bottom:1px solid #000}
+body.hc-mode .pricing-row-cost{color:#000 !important}
+body.hc-mode .hero-photo-frame{background:#fff;border-color:#000}
+body.hc-mode .hero-photo-tag{background:#000;color:#fff}
+body.hc-mode .hero-photo-frame .ph-title,body.hc-mode .hero-photo-frame .ph-note,body.hc-mode .hero-photo-frame .ph-icon{color:#000 !important}
+body.hc-mode .demo-banner{background:#000;color:#fff;border-bottom-color:#000}
+body.hc-mode .demo-banner a{color:#fff}
+body.hc-mode .sticky-call{background:#000;border-top-color:#000}
+body.hc-mode footer.site-footer{background:#000;color:#fff;border-top-color:#fff}
+body.hc-mode footer.site-footer a{color:#fff}
+body.hc-mode footer.site-footer .footer-tag,body.hc-mode footer.site-footer .footer-contact,body.hc-mode footer.site-footer .footer-col a,body.hc-mode footer.site-footer .footer-bottom span,body.hc-mode footer.site-footer .footer-credit{color:#fff !important}
+body.hc-mode .a11y-trigger{background:#000;color:#fff;border:2px solid #fff}
+body.hc-mode .a11y-panel{background:#fff;border:2px solid #000;border-top:3px solid #000}
+body.hc-mode .a11y-btn{background:#fff;color:#000;border:2px solid #000}
+body.hc-mode .a11y-btn[aria-pressed="true"]{background:#000;color:#fff}
+body.hc-mode nav.main-nav{background:#fff;border-bottom:2px solid #000}
+body.hc-mode .article-body blockquote{background:#fff;border-left-color:#000}
+body.hc-mode .area-tile:hover{background:#000;color:#fff}
 
 /* Reset ------------------------------------------------------------------ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -105,11 +143,12 @@ button{font-family:inherit}
 .skip-link:focus,.skip-link:focus-visible{top:0;color:#fff}
 
 /* Demo banner (always visible) ------------------------------------------ */
-.demo-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--navy-dark);color:#fff;padding:6px 16px;text-align:center;font-size:13px;line-height:1.4;border-bottom:2px solid var(--copper)}
+.demo-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--navy-dark);color:#fff;padding:0 16px;text-align:center;font-size:13px;line-height:1;border-bottom:2px solid var(--copper);height:32px;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap}
+.demo-banner-content{display:inline-block;line-height:1.2}
 .demo-banner a{color:var(--copper-soft);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .demo-banner a:hover{color:#fff}
 .demo-banner strong{color:#fff;font-weight:600}
-@media (max-width:600px){.demo-banner{font-size:12px;padding:5px 12px}.demo-banner .demo-banner-long{display:none}}
+@media (max-width:700px){.demo-banner{font-size:11px;padding:0 10px;height:28px}.demo-banner-mid,.demo-banner-long{display:none}}
 
 /* Top nav ---------------------------------------------------------------- */
 nav.main-nav{position:fixed;top:32px;left:0;right:0;z-index:200;height:72px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;transition:box-shadow .25s}
@@ -542,6 +581,11 @@ footer.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.7);paddin
 .mt-0{margin-top:0}
 .hide-mob{display:initial}
 @media (max-width:700px){.hide-mob{display:none}}
+
+
+/* User text size scaling -------------------------------------------------- */
+body.text-large{zoom:1.15}
+body.text-xl{zoom:1.3}
 
 /* Print -----------------------------------------------------------------*/
 @media print{.demo-banner,nav.main-nav,.sticky-call,.a11y-trigger,.a11y-panel,footer.site-footer{display:none}body{padding-top:0}}
