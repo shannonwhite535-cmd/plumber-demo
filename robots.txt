@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://plumber-demo.steelcapdigital.com.au/sitemap.xml
