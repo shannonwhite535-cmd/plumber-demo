@@ -77,7 +77,7 @@ The `_headers` file is Cloudflare Pages compatible and handles security headers 
 ## Folder structure
 
 ```
-plumber-demo-v3-crack-plumbing/
+plumber-demo-v3.3-crack-plumbing/
 ├── index.html
 ├── about.html
 ├── services.html
@@ -127,6 +127,8 @@ plumber-demo-v3-crack-plumbing/
     ├── nav.js
     ├── a11y.js
     ├── og-default.jpg
+    ├── logo.png
+    ├── logo-hc.png
     └── fonts/
         ├── big-shoulders-display-latin-700.woff2
         ├── big-shoulders-display-latin-800.woff2
@@ -209,3 +211,93 @@ Shannon's full audit of v2 caught three blockers for the Facebook ad use case an
 - favicon.ico
 - apple-touch-icon.png
 - assets/og-default.jpg
+
+---
+
+## v3.1 patch (May 2026)
+
+**High-contrast contrast bugs**
+
+Shannon ran v3 in HC mode and caught the home-hero text disappearing. Full audit found four more elements with the same root cause: v2's HC fix redefined the colour variables (--navy and --copper both become #000 in HC), so any element whose default background uses one of those vars goes black. If no HC rule whitens the background but the descendant text gets forced to black via body.hc-mode, the content disappears.
+
+Fixed five elements in `assets/style.css`:
+
+1. `.home-hero` (Shannon's screenshot): added to the whitened-sections selector list on line 90. Now bg #fff + text #000 like all other major sections.
+2. `.article-cta` (used in 5 blog posts): had no HC rule at all. Now bg #fff + text #000 + 2px black border + 4px black top accent (preserving the visual "this is a CTA box" pattern).
+3. `.sticky-call` text (mobile sticky bar, every page): bg was already explicitly #000 in HC but child text inherited body's #000. Now `.sticky-call-text`, its `strong` and `span` are forced #fff.
+4. `.nav-brand-mark` (nav + footer logo box on every page): bg was navy (so #000 in HC) and the SVG inside it had `fill:var(--copper)` (also #000 in HC). Black on black. Now bg #fff with a black border and the SVG fill forced to #000.
+5. `.btn-white` (used inside `.section.navy` and `.article-cta`): default is white background. After v3.1 whitens those parent sections, the button shape disappears. Now styled like `.btn-outline` in HC: bg #fff + text #000 + 2px black border, with inverted hover.
+
+**Files changed**
+- assets/style.css (one line edit on existing selector list + 8 new HC rules, no other changes)
+- README.md (this patch note)
+
+No HTML files changed.
+
+---
+
+## v3.2 patch (May 2026)
+
+**Mobile rendering bugs**
+
+Shannon ran v3.1 on her actual phone (OPPO Reno 13F, Chrome on ColorOS) and the demo banner was rendering as multi-line desktop text with the banner growing tall to accommodate it. Browser-resize tests on desktop didn't reproduce the bug. Audit found the root cause was a breakpoint mismatch: nav switched to mobile at 1000px, banner only at 700px. Anywhere in the 701-1000px range you'd get hamburger nav with desktop banner. Most phones report ~411px CSS width, but Chrome on some Android skins (ColorOS, MIUI, OneUI) can report wider viewports under certain system display-scale settings, landing in the dead zone.
+
+Fixed five mobile issues in `assets/style.css`:
+
+1. **Banner breakpoint alignment**: changed banner mobile rule from `@media (max-width:700px)` to `(max-width:1000px)`. Banner now switches to mobile mode at the same width as nav, no dead zone.
+
+2. **Banner robustness (belt and braces)**: added `white-space:nowrap`, `overflow:hidden`, `text-overflow:ellipsis`, and `max-width:100%` directly to `.demo-banner-content`. Previously these only existed on the parent and were relying on inheritance. Now even if a child element accidentally overrides, the content can't wrap or overflow.
+
+3. **Banner height clamp**: added `max-height:32px` (desktop) / `max-height:28px` (mobile) alongside the existing `height` so the banner can't grow vertically under any rendering condition. Was a real concern: Shannon's screenshot showed the banner at ~60px tall.
+
+4. **Nav brand subtitle wrap**: "Plumbing · Gas · Hunter region" was wrapping to two lines on narrow viewports because the small element had no white-space rule. Added `white-space:nowrap` to keep it on one line, and added a `<=600px` rule that hides the subtitle entirely on phones plus drops the main brand text from 20px to 18px so the nav doesn't get crowded.
+
+5. **Excessive section padding on mobile**: `.section` had `padding:80px 24px` at all widths. 80px top + 80px bottom of empty space on phones was wasted vertical real estate. Added a `<=700px` rule reducing section padding to 56px vertical, plus tighter padding on `.page-hero` (72→48), `.pricing-strip` (64→48), and `.cta-strip` (64→48).
+
+**Files changed**
+- assets/style.css (5 surgical edits, 4 changed rules and 1 new mobile rule, no other changes)
+- README.md (this patch note)
+
+No HTML files changed.
+
+---
+
+## v3.3 patch (May 2026)
+
+**New logo**
+
+Shannon supplied a new brand mark: copper pipe wrench with two water drops on a dark navy rounded square. The original Gemini-generated PNG had a cream surround. Stripped the cream to a transparent alpha so the navy rounded square sits cleanly on any page background (white nav, dark footer, etc.).
+
+**Asset processing**
+- Cropped the 2048x2048 source to the bounds of the navy square (1438x1487), discarding the cream.
+- Used a colour-distance soft threshold to remove cream pixels with anti-aliased alpha at the rounded corner edges. Master saved at 1024x1024.
+- Generated sized derivatives: `assets/logo.png` (192x192 for nav and footer), `apple-touch-icon.png` (180), `favicon.ico` (multi-res 16/32/48), `favicon.svg` (rewritten as a thin SVG wrapper around an embedded 48x48 PNG, so the existing `<link rel="icon" type="image/svg+xml">` in HTML keeps working).
+- Built a black-and-white variant `assets/logo-hc.png`: classified each opaque pixel by colour (red-blue delta > 30 = copper), mapped copper → black and navy → white. Result is a white rounded square with black wrench and drops, used in high-contrast mode.
+
+**HTML changes**
+- Replaced the inline-SVG brand mark inside every `<span class="nav-brand-mark">` (nav + footer = 2 per page) with an empty span. CSS background-image now renders the logo. 33 files updated, 66 brand marks replaced.
+
+**CSS changes**
+- `.nav-brand-mark`: removed `background:var(--navy)`, `border-radius:6px`, and the flex centring. Now just a sized box (42x42) with `background-image:url('/assets/logo.png')` + `background-size:contain`. The image already has the navy box and rounded corners built in.
+- Deleted `.nav-brand-mark svg{...}` (no inline SVG to fill anymore).
+- `body.hc-mode .nav-brand-mark`: now swaps the background-image to `logo-hc.png` and adds a 2px black border + 6px radius for definition.
+- Footer-size override (`.footer-brand .nav-brand-mark{width:38px;height:38px}`) carries through because `background-size:contain` scales the image to whatever box it lands in.
+
+**Why background-image instead of <img>**
+- The mark is purely decorative (already aria-hidden) so semantic <img> wasn't earning anything.
+- CSS background-image lets HC mode swap the variant via a single property override, no DOM duplication.
+- One fewer element per page in 66 places.
+
+**Files added**
+- assets/logo.png (24 KB)
+- assets/logo-hc.png (10 KB)
+
+**Files replaced**
+- favicon.ico (regenerated from new mark)
+- favicon.svg (rewritten as embedded-PNG wrapper)
+- apple-touch-icon.png (regenerated from new mark)
+
+**Files changed**
+- assets/style.css (3 brand-mark rules: base, HC, footer-size variant)
+- All 33 HTML files (inline SVG removed from brand-mark spans, no other changes)
+- README.md (this patch note + folder structure listing)
